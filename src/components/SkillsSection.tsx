@@ -29,9 +29,9 @@ const SkillsSection = () => {
       title: "Programming Languages",
       skills: [
         { name: "C++", level: 85 },
-        { name: "Java", level: 80 },
-        { name: "C", level: 75 },
-        { name: "JavaScript", level: 70 }
+        { name: "Java", level: 40 },
+        { name: "C", level: 60 },
+        { name: "JavaScript", level: 30 }
       ]
     },
     {
@@ -40,18 +40,17 @@ const SkillsSection = () => {
       skills: [
         { name: "HTML5", level: 90 },
         { name: "CSS3", level: 85 },
-        { name: "React", level: 65 },
-        { name: "MERN Stack", level: 60 }
+        { name: "React", level: 40 },
+        { name: "MERN Stack", level: 30 }
       ]
     },
     {
       icon: <Database className="h-8 w-8 text-accent" />,
       title: "Database & Tools",
       skills: [
-        { name: "MySQL", level: 80 },
-        { name: "DBMS", level: 75 },
-        { name: "Git/GitHub", level: 85 },
-        { name: "VS Code", level: 90 }
+        { name: "MySQL", level: 50 },
+        { name: "Git/GitHub", level: 55 },
+        { name: "VS Code", level: 60 }
       ]
     },
     {
@@ -59,7 +58,7 @@ const SkillsSection = () => {
       title: "Problem Solving",
       skills: [
         { name: "Data Structures", level: 75 },
-        { name: "Algorithms", level: 70 },
+        { name: "Algorithms", level: 5 },
         { name: "LeetCode", level: 65 },
         { name: "Debugging", level: 80 }
       ]
