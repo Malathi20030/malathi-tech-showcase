@@ -48,7 +48,7 @@ const AchievementsSection = () => {
   const stats = [
     { number: "8.5", label: "Current CGPA", icon: <Trophy className="h-6 w-6 text-primary" /> },
     { number: "2+", label: "Hackathons", icon: <Users className="h-6 w-6 text-secondary" /> },
-    { number: "3+", label: "Projects", icon: <Target className="h-6 w-6 text-accent" /> },
+    { number: "2+", label: "Projects", icon: <Target className="h-6 w-6 text-accent" /> },
     { number: "50+", label: "DSA Problems", icon: <BookOpen className="h-6 w-6 text-primary" /> }
   ];
 
