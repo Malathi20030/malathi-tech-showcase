@@ -1,9 +1,6 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Linkedin, Github, ExternalLink, Users } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Github, ExternalLink, Users } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 
 const ContactSection = () => {
@@ -16,47 +13,12 @@ const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon!",
-    });
-
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-    setIsSubmitting(false);
-  };
-
   const contactInfo = [
     {
       icon: <Mail className="h-6 w-6 text-primary" />,
       title: "Email",
       value: "malathibharathikumaran30@gmail.com",
       link: "mailto:malathibharathikumaran30@gmail.com"
-    },
-    {
-      icon: <Phone className="h-6 w-6 text-secondary" />,
-      title: "Phone",
-      value: "+91 9042745011",
-      link: "tel:+919042745011"
     },
     {
       icon: <MapPin className="h-6 w-6 text-accent" />,
@@ -102,16 +64,16 @@ const ContactSection = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-primary mx-auto mb-8"></div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities, projects, or just having a chat about technology
+            I'm always open to discussing new opportunities, projects, or just having a chat about technology.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
+          {/* Left: Contact Info */}
           <div className="animate-fade-in-left">
             <h3 className="text-2xl font-semibold text-foreground mb-8">Let's Connect</h3>
-            
-            {/* Contact Info Cards */}
+
+            {/* Info Cards */}
             <div className="space-y-6 mb-8">
               {contactInfo.map((info, index) => (
                 <Card key={index} className="glass-card hover-scale">
@@ -161,107 +123,27 @@ const ContactSection = () => {
               </CardContent>
             </Card>
 
-            {/* Quick Message */}
+            {/* Response Note */}
             <div className="mt-8 p-6 bg-gradient-card rounded-xl border border-border">
               <h4 className="font-semibold text-foreground mb-2">Quick Response</h4>
               <p className="text-sm text-muted-foreground">
-                I typically respond to messages within 24 hours. Feel free to reach out about 
-                internship opportunities, project collaborations, or tech discussions!
+                I typically respond within 24 hours. Reach out for internships, projects, or tech chats!
               </p>
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="animate-fade-in-right">
-            <Card className="glass-card">
-              <CardHeader>
-                <CardTitle className="text-2xl">Send a Message</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                        Your Name
-                      </label>
-                      <Input
-                        id="name"
-                        name="name"
-                        type="text"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Enter your name"
-                        required
-                        className="bg-background border-border"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                        Email Address
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="Enter your email"
-                        required
-                        className="bg-background border-border"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                      Subject
-                    </label>
-                    <Input
-                      id="subject"
-                      name="subject"
-                      type="text"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      placeholder="What's this about?"
-                      required
-                      className="bg-background border-border"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                      Message
-                    </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Tell me about your project or opportunity..."
-                      rows={5}
-                      required
-                      className="bg-background border-border resize-none"
-                    />
-                  </div>
-
-                  <Button 
-                    type="submit" 
-                    className="w-full btn-gradient"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? (
-                      "Sending..."
-                    ) : (
-                      <>
-                        <Send className="mr-2 h-4 w-4" />
-                        Send Message
-                      </>
-                    )}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+          {/* Right Side - Large Quote */}
+          <div className="flex items-center justify-center animate-fade-in-right">
+            <div className="glass-card w-full p-10 rounded-2xl border border-border shadow-xl bg-gradient-to-br from-muted/60 to-background/80 backdrop-blur">
+              <p className="text-3xl md:text-4xl font-bold text-foreground italic leading-snug tracking-wide text-center">
+                “Success is not final, failure is not fatal: It is the courage to continue that counts.”
+              </p>
+              <div className="text-right mt-6">
+                <span className="text-lg text-muted-foreground font-medium">— Winston Churchill</span>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
