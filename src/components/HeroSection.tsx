@@ -1,3 +1,5 @@
+// HeroSection.jsx
+
 import { useState, useEffect } from 'react';
 import { ArrowDown, Download, Github, Linkedin, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -80,13 +82,22 @@ const HeroSection = () => {
             >
               Get In Touch
             </Button>
-            <Button 
-              variant="outline" 
-              className="text-lg px-8 py-4 border-white/30 text-white hover:bg-white/10"
+
+            {/* Download Resume Button */}
+            <a 
+              href="/Academic_CV_Template.pdf" 
+              download="Academic_CV_Template.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
             >
-              <Download className="mr-2 h-5 w-5" />
-              Download Resume
-            </Button>
+              <Button 
+                variant="outline" 
+                className="text-lg px-8 py-4 border-white/30 text-white hover:bg-white/10 flex items-center"
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Download Resume
+              </Button>
+            </a>
           </div>
 
           {/* Social Links */}
