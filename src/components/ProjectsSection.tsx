@@ -15,29 +15,13 @@ const ProjectsSection = () => {
         "Clean and professional layout",
         "Cross-browser compatibility"
       ],
-      date: "April 2024",
+      date: "july 2025",
       status: "Completed",
       github: "https://github.com/",
       live: "#",
       image: "portfolio"
     },
-    {
-      title: "E-Commerce Platform",
-      description: "Currently developing a full-stack e-commerce application using the MERN stack. This project focuses on creating a scalable and user-friendly online shopping experience with modern features.",
-      techStack: ["MongoDB", "Express.js", "React", "Node.js", "JWT"],
-      features: [
-        "User authentication and authorization",
-        "Product catalog with search and filters",
-        "Shopping cart functionality",
-        "Payment gateway integration",
-        "Admin dashboard for product management"
-      ],
-      date: "In Progress",
-      status: "Development",
-      github: "https://github.com/",
-      live: "#",
-      image: "ecommerce"
-    },
+    
     {
       title: "Task Management App",
       description: "A productivity application built with React for managing daily tasks and projects. Features include task categorization, priority levels, deadline tracking, and progress monitoring.",
@@ -147,22 +131,7 @@ const ProjectsSection = () => {
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex gap-4">
-                      <Button asChild className="btn-gradient">
-                        <a href={project.github} target="_blank" rel="noopener noreferrer">
-                          <Github className="mr-2 h-4 w-4" />
-                          View Code
-                        </a>
-                      </Button>
-                      {project.status === 'Completed' && (
-                        <Button variant="outline" asChild>
-                          <a href={project.live} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="mr-2 h-4 w-4" />
-                            Live Demo
-                          </a>
-                        </Button>
-                      )}
-                    </div>
+                   
                   </CardContent>
                 </div>
               </div>
