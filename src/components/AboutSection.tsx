@@ -6,7 +6,7 @@ const AboutSection = () => {
     {
       icon: <GraduationCap className="h-8 w-8 text-primary" />,
       title: "Academic Excellence",
-      description: "Maintaining 8.5 CGPA in B.Tech IT program"
+      description: "Maintaining 8.5 CGPA in B.Tech IT program in  Dhirajlal Gandhi College of Technology"
     },
     {
       icon: <Code className="h-8 w-8 text-secondary" />,
@@ -51,7 +51,7 @@ const AboutSection = () => {
 
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-foreground">Malathi B</h3>
-              <p className="text-lg text-muted-foreground">B.Tech IT Student | Future Full-Stack Developer</p>
+              <p className="text-lg text-muted-foreground">B.Tech 3rd IT Student | Dhirajlal Gandhi College of Technology</p>
               <div className="flex flex-col sm:flex-row gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center">
                   <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
